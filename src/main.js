@@ -24,14 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedOption = option;
         continueBtn.disabled = false;
         if (option === 'donor') {
-            donorCard.classList.add('bg-red-500', 'text-white');
-            facilityCard.classList.remove('bg-red-500', 'text-white');
+            donorCard.classList.add('border-red-500', 'text-red-500');
+            donorCard.classList.remove('text-gray-700', 'dark:text-gray-300');
+            facilityCard.classList.remove('border-red-500', 'text-red-500');
+            facilityCard.classList.add('text-gray-700', 'dark:text-gray-300');
         } else {
-            facilityCard.classList.add('bg-red-500', 'text-white');
-            donorCard.classList.remove('bg-red-500', 'text-white');
+            facilityCard.classList.add('border-red-500', 'text-red-500');
+            facilityCard.classList.remove('text-gray-700', 'dark:text-gray-300');
+            donorCard.classList.remove('border-red-500', 'text-red-500');
+            donorCard.classList.add('text-gray-700', 'dark:text-gray-300');
         }
     }
-
+    
     function redirectToRegistration() {
         if (selectedOption === 'donor') {
             window.location.href = 'donor-register.html';
