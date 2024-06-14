@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Blud</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e0a35a77e2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+    <header class="flex items-center justify-between px-4 lg:px-6 h-14 bg-white dark:bg-gray-950">
+        <a class="flex items-center" href="#">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6 text-red-500"
+            >
+                <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path>
+                <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
+            </svg>
+            <span class="ml-2 text-lg font-semibold">LifeBlud</span>
+        </a>
+        <div class="flex items-center space-x-4">
+            <a
+                id="signUpBtn"
+                class="inline-flex h-9 items-center justify-center rounded-md bg-red-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-red-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-600 disabled:pointer-events-none disabled:opacity-50"
+                href="#"
+            >
+                Sign Up
+            </a>
+        </div>
+    </header>
+    <main class="flex-1">
+        <section class="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-red-50 to-red-100 dark:from-gray-900 dark:to-gray-800">
+            <div class="container px-4 md:px-6 mx-auto">
+                <div class="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+                    <div class="space-y-4">
+                        <div class="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-500 dark:bg-red-900 dark:text-red-400">
+                            #HackOps 1.0
+                        </div>
+                        <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+                            Save Lives with Your Blood Donation
+                        </h1>
+                        <p class="max-w-lg text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
+                            Join our mission to ensure a safe and adequate blood supply for those in need. Become a blood donor
+                            today and make a life-changing difference.
+                        </p>
+                        <a
+                            id="getStartedBtn"
+                            class="inline-flex h-10 items-center justify-center rounded-md bg-red-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-red-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-600 disabled:pointer-events-none disabled:opacity-50"
+                            href="#"
+                        >
+                           Get started
+                        </a>
+                    </div>
+                    <img
+                        src="./img/bd1.jpg"
+                        alt="Blood Donation"
+                        class="mx-auto w-full max-w-lg aspect-w-3 aspect-h-2 overflow-hidden rounded-xl object-cover object-center"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="w-full py-12 md:py-24 lg:py-32">
+            <div class="container px-4 md:px-6 mx-auto">
+                <div class="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+                    <img
+                        src="./img/bd2.jpg"
+                        alt="About LifeDrop"
+                        class="mx-auto w-full max-w-lg aspect-w-3 aspect-h-2 overflow-hidden rounded-xl object-cover object-center"
+                    />
+                    <div class="space-y-4">
+                        <div class="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-500 dark:bg-red-900 dark:text-red-400">
+                            About LifeDrop
+                        </div>
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                            Empowering Blood Donation for a Healthier Community
+                        </h2>
+                        <p class="max-w-lg text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
+                            LifeDrop is an organization dedicated to increasing blood donation and ensuring a safe and
+                            adequate blood supply for those in need. Hospitals, blood banks and any other health care facilities can also register on LifeBlud
+                            to make the donation process easy, accessible, and rewarding.
+                        </p>
+                        <a
+                            class="inline-flex h-10 items-center justify-center rounded-md border border-red-500 bg-white px-8 text-sm font-medium text-red-500 shadow-sm transition-colors hover:bg-red-100 hover:text-red-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-600 disabled:pointer-events-none disabled:opacity-50 dark:border-red-400 dark:bg-gray-950 dark:text-red-400 dark:hover:bg-red-900 dark:hover:text-red-500 dark:focus-visible:ring-red-400" id="signUpBtn"
+                            href=""
+                        >
+                           Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+            <div class="container px-4 md:px-6 mx-auto">
+                <div class="space-y-4 text-center">
+                    <div class="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-500 dark:bg-red-900 dark:text-red-400">
+                        Blood Donation Facts
+                    </div>
+                    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Donate Blood, Save Lives</h2>
+                    <p class="mx-auto max-w-2xl text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
+                        Blood donation is a simple and safe process that can have a profound impact on the lives of others.
+                        Learn more about the importance of blood donation and how you can get involved.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div class="rounded-md border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                        <div class="flex items-center justify-between">
+                            <div class="text-4xl font-bold text-red-500">8M+</div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-12 w-12 text-red-500"
+                            >
+                                <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path>
+                                <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
+                            </svg>
+                        </div>
+                        <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">Lives saved through blood donations annually.</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                        <div class="flex items-center justify-between">
+                            <div class="text-4xl font-bold text-red-500">15 min</div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-12 w-12 text-red-500"
+                            >
+                                <path d="M12 6v6l4 2"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">The average time it takes to donate blood.</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                        <div class="flex items-center justify-between">
+                            <div class="text-4xl font-bold text-red-500">3x</div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-12 w-12 text-red-500"
+                            >
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">Blood donors can save up to three lives with one donation.</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                        <div class="flex items-center justify-between">
+                            <div class="text-4xl font-bold text-red-500">Every 2 sec</div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-12 w-12 text-red-500"
+                            >
+                                <path d="M12 8v4l3 3"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">Someone needs blood every two seconds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="w-full py-12 md:py-24 lg:py-32 bg-white text-center flex flex-col items-center justify-center">
+    <div class="container px-4 md:px-6">
+        <div class="space-y-4 max-w-[900px] mx-auto">
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Our Partners</h2>
+            <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Trusted by
+            </p>
+            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center mt-6 gap-4">
+                <div class="flex justify-center items-center w-16 h-16 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                    <img src="./img/pipe.png" alt="Partner Logo" class="w-full h-full object-contain" />
+                </div>
+                <!-- Add more logos as needed -->
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <footer class="w-full py-6 bg-gray-200 dark:bg-gray-950">
+        <div class="container px-4 md:px-6 mx-auto">
+            <div class="flex flex-col items-center justify-between space-y-4 text-center text-sm text-gray-600 dark:text-gray-400 md:flex-row md:space-y-0">
+                <div>
+                    &copy; <span id="year"></span> LifeDrop
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://pipeops.io/hackathon" class="hover:text-red-500 dark:hover:text-red-400">#HackOps 1.0</a>
+                    <a href="https://github.com/LifeBluds" target="_blank" class="hover:text-red-500 dark:hover:text-red-400">Dev</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Modal -->
+<div id="signupModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 p-4 sm:p-6 md:p-8">
+    <div class="bg-white dark:bg-gray-950 p-8 rounded-lg max-w-md w-full mx-auto">
+        <h3 class="text-xl font-semibold mb-4 text-center">Sign up as:</h3>
+        <div class="flex flex-col sm:flex-row justify-around mb-4">
+            <div id="donorCard" class="cursor-pointer p-4 border rounded-lg text-center flex-1 mx-2 mb-2 sm:mb-0 transition-transform transform hover:scale-105 dark:border-gray-700">
+                <h4 class="font-semibold">Donor</h4>
+            </div>
+            <div id="facilityCard" class="cursor-pointer p-4 border rounded-lg text-center flex-1 mx-2 mb-2 sm:mb-0 transition-transform transform hover:scale-105 dark:border-gray-700">
+                <h4 class="font-semibold">Facility</h4>
+            </div>
+        </div>
+        <button id="continueBtn" class="w-full py-2 bg-red-500 text-white rounded-lg disabled:bg-red-300" disabled>Continue</button>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
