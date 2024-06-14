@@ -1,6 +1,6 @@
  // Mobile button click handler
  document.getElementById('mobileContinueBtn').addEventListener('click', function () {
-    window.location.href = 'register.html'; 
+    window.location.href = 'reg.html'; 
 });
 
 let selectedCard = null;
