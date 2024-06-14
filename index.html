@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Blud</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/e0a35a77e2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
-        .dark-red-500 { color: #8B0000; }
-        .bg-dark-red-500 { background-color: #8B0000; }
-        .border-dark-red-500 { border-color: #8B0000; }
-        .dark-red-300 { background-color: #E57373; }
-        .border-dark-red-300 { border-color: #E57373; }
+        .dark-red-500 {
+            color: #8B0000;
+        }
+
+        .bg-dark-red-500 {
+            background-color: #8B0000;
+        }
+
+        .border-dark-red-500 {
+            border-color: #8B0000;
+        }
+
+        .dark-red-300 {
+            background-color: #E57373;
+        }
+
+        .border-dark-red-300 {
+            border-color: #E57373;
+        }
+
         .selected {
             border-color: #8B0000;
         }
+
         #continueBtn:disabled {
             cursor: not-allowed;
-            opacity: 0.6; /* Adjust opacity for disabled state */
-            color: #666; /* Adjust text color for disabled state */
+            opacity: 0.6;
+            /* Adjust opacity for disabled state */
+            color: #666;
+            /* Adjust text color for disabled state */
         }
     </style>
 </head>
+
 <body class="bg-gray-100 dark:bg-gray-950">
-<div class="flex min-h-screen">
-    <!-- Logo and text
-    <div class="absolute top-4 left-4 flex items-center space-x-2">
-        <img src="./img/gg.png" alt="Life Blud Logo" class="h-10">
-        <span class="text-black font-bold text-lg">Life</span>
-        <span class="text-dark-red-500 font-bold text-lg">Blud</span>
-    </div> -->
-
-    <!-- Left side: Form content -->
-    <div id="leftContent" class="flex-1 flex flex-col justify-center items-center bg-white dark:bg-gray-900 p-8 relative">
-        <!-- Sign Up Form -->
-        <div id="signupForm" class="space-y-4 w-full max-w-md">
-            <h2 class="text-2xl font-bold text-center mb-8 text-dark-red-500" style="color: #8B0000;">Who are you signing up as?</h2>
-            <br>
-            <br>
-            <div class="flex flex-col sm:flex-row justify-around mb-4 space-y-4 sm:space-y-0">
-                <div id="donorCard" class="cursor-pointer p-4 border rounded-lg text-center flex-1 mx-2 mb-2 sm:mb-0 transition-transform transform hover:scale-105 dark:border-gray-700 relative bg-white dark:bg-gray-800">
-                    <i class="fas fa-hand-holding-heart text-4xl absolute -top-6 left-1/2 transform -translate-x-1/2" style="color: #8B0000;"></i>
-                    <h4 class="font-semibold mt-6">Donor</h4>
-                    <p class="text-sm mt-2">Sign up to easily find blood donation opportunities, manage your appointments, and track your impact on the community.</p>
+    <div class="flex min-h-screen">
+        <!-- Left side (Form content) -->
+        <div id="leftContent" class="hidden sm:flex sm:flex-1 flex-col justify-center items-center bg-white dark:bg-gray-900 p-8 relative">
+            <!-- Sign Up Form -->
+            <div id="signupForm" class="space-y-4 w-full max-w-md">
+                <h2 class="text-2xl font-bold text-center mb-8 text-dark-red-500" style="color: #8B0000;">Who are you signing up as?</h2>
+                <div class="flex flex-col sm:flex-row justify-around mb-4 space-y-4 sm:space-y-0">
+                    <div id="donorCard" class="cursor-pointer p-4 border rounded-lg text-center flex-1 mx-2 mb-2 sm:mb-0 transition-transform transform hover:scale-105 dark:border-gray-700 relative bg-white dark:bg-gray-800">
+                        <i class="fas fa-hand-holding-heart text-4xl absolute -top-6 left-1/2 transform -translate-x-1/2" style="color: #8B0000;"></i>
+                        <h4 class="font-semibold mt-6">Donor</h4>
+                        <p class="text-sm mt-2">Sign up to easily find blood donation opportunities, manage your appointments, and track your impact on the community.</p>
+                    </div>
+                    <div id="facilityCard" class="cursor-pointer p-4 border rounded-lg text-center flex-1 mx-2 mb-2 sm:mb-0 transition-transform transform hover:scale-105 dark:border-gray-700 relative bg-white dark:bg-gray-800">
+                        <i class="fas fa-hospital text-4xl absolute -top-6 left-1/2 transform -translate-x-1/2" style="color: #8B0000;"></i>
+                        <h4 class="font-semibold mt-6">Medical Facility</h4>
+                        <p class="text-sm mt-2">Streamline your blood requests, manage inventory, and connect with a network of qualified blood donors.</p>
+                    </div>
                 </div>
-                <div id="facilityCard" class="cursor-pointer p-4 border rounded-lg text-center flex-1 mx-2 mb-2 sm:mb-0 transition-transform transform hover:scale-105 dark:border-gray-700 relative bg-white dark:bg-gray-800">
-                    <i class="fas fa-hospital text-4xl absolute -top-6 left-1/2 transform -translate-x-1/2" style="color: #8B0000;"></i>
-                    <h4 class="font-semibold mt-6">Medical Facility</h4>
-                    <p class="text-sm mt-2">Streamline your blood requests, manage inventory, and connect with a network of qualified blood donors.</p>
-                </div>
+                <button id="continueBtn" class="w-full py-2 bg-dark-red-500 text-white rounded-lg disabled:bg-dark-red-300 mt-4" disabled>Sign Up</button>
+                <p class="text-center mt-4">Already have an account? <a href="login.html" class="text-dark-red-500">Log in</a></p>
             </div>
-            <button id="continueBtn" class="w-full py-2 bg-dark-red-500 text-white rounded-lg disabled:bg-dark-red-300" disabled>Sign Up</button>
-            <p class="text-center mt-4">Already have an account? <a href="login.html" class="text-dark-red-500">Log in</a></p>
         </div>
-    </div>
 
-    <!-- Right side: Image with glassmorphism box -->
-    <div class="flex-1 relative">
-        <img src="./img/bd1.jpg" alt="Blood Donation" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-            <div class="bg-white bg-opacity-20 p-8 rounded-lg shadow-lg backdrop-blur-sm">
-                <h1 class="text-3xl font-bold text-white">Welcome to LifeBlud</h1>
-                <p class="mt-4 text-lg text-white">Join our mission to save lives through blood donation.</p>
-                <h2 class="text-xl font-bold text-white mt-6">Why Donate Blood?</h2>
-                <ul class="mt-4 space-y-2 text-white">
-                    <li><i class="fas fa-heartbeat mr-2"></i> Saves lives of those in need</li>
-                    <li><i class="fas fa-tint mr-2"></i> Promotes your own health by stimulating blood cell production</li>
-                    <li><i class="fas fa-hands-helping mr-2"></i> Creates a sense of community and helps others</li>
-                </ul>
-            </div>
+<!-- Right side (Image with glassmorphism box) - Mobile View -->
+<div class="sm:hidden flex items-center justify-center min-h-screen">
+    <img src="./img/bd1.jpg" alt="Blood Donation" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
+        <div class="w-full max-w-md mx-4 bg-white bg-opacity-20 p-8 rounded-lg shadow-lg backdrop-blur-sm text-center">
+            <h1 class="text-3xl font-bold text-white mb-4">Welcome to LifeBlud</h1>
+            <p class="text-lg text-white">Join our mission to save lives through blood donation.</p>
+            <h2 class="text-xl font-bold text-white mt-4">Why Donate Blood?</h2>
+            <ul class="mt-4 space-y-2 text-white text-left">
+                <li><i class="fas fa-heartbeat mr-2"></i> Saves lives of those in need</li>
+                <li><i class="fas fa-tint mr-2"></i> Promotes your own health by stimulating blood cell production</li>
+                <li><i class="fas fa-hands-helping mr-2"></i> Creates a sense of community and helps others</li>
+            </ul>
+            <!-- Mobile Sign Up Button -->
+            <button id="mobileContinueBtn" class="w-full py-2 bg-red-500 text-white rounded-lg mt-4">Sign Up</button>
+            <p class="text-center mt-2 text-white">Already have an account? <a href="login.html" class="text-red-500">Log in</a></p>
         </div>
     </div>
 </div>
-<script src="/scripts/home.js"></script>
+
+
+
+        <!-- Right side (Image with glassmorphism box) - Displayed on desktops and larger devices -->
+        <div class="hidden sm:flex sm:flex-1 relative">
+            <img src="./img/bd1.jpg" alt="Blood Donation" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
+                <div class="bg-white bg-opacity-20 p-8 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                    <h1 class="text-3xl font-bold text-white mb-4">Welcome to LifeBlud</h1>
+                    <p class="text-lg text-white">Join our mission to save lives through blood donation.</p>
+                    <h2 class="text-xl font-bold text-white mt-4">Why Donate Blood?</h2>
+                    <ul class="mt-4 space-y-2 text-white text-left">
+                        <li><i class="fas fa-heartbeat mr-2"></i> Saves lives of those in need</li>
+                        <li><i class="fas fa-tint mr-2"></i> Promotes your own health by stimulating blood cell production</li>
+                        <li><i class="fas fa-hands-helping mr-2"></i> Creates a sense of community and helps others</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/home.js"> </script>
 </body>
+
 </html>
