@@ -1,3 +1,8 @@
+ // Mobile button click handler
+ document.getElementById('mobileContinueBtn').addEventListener('click', function () {
+    window.location.href = 'register.html'; 
+});
+
 let selectedCard = null;
 
 document.getElementById('donorCard').addEventListener('click', function() {
@@ -42,3 +47,5 @@ document.getElementById('leftContent').addEventListener('click', function(event)
         document.querySelector('#facilityCard i').classList.remove('text-dark-red-500');
     }
 });
+
+
