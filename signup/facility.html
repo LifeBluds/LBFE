@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Facility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e0a35a77e2.js" crossorigin="anonymous"></script>
+    <style>
+        .btn-disabled {
+            background-color: #f87171; /* red-400 */
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .valid-check {
+            color: green;
+        }
+        .invalid-check {
+            color: red;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="relative max-w-6xl w-full bg-white rounded-lg shadow-md grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+        <div>
+            <div class="space-y-6 py-12">
+                <div class="space-y-2 text-center">
+                    <h1 class="text-3xl font-bold">Sign Up as a Facility</h1>
+                </div>
+                <div class="space-y-4">
+                    <form class="space-y-4" id="register-form" onsubmit="handleFacilityFormSubmit(event)">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="facility-type">Type of Facility</label>
+                            <select class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="facility-type" required>
+                                <option value="" disabled selected>Select your facility type</option>
+                                <option value="blood-bank">Blood Bank</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="reg-number">Registration Number (if applicable)</label>
+                            <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="reg-number" placeholder="Enter your registration number" type="text">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="facility-email">Facility Email</label>
+                            <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="facility-email" placeholder="facility@example.com" required type="email">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="official-phone">Official Phone Number</label>
+                            <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="official-phone" placeholder="123-456-7890" required type="tel">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="address">Address</label>
+                            <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="address" placeholder="123 Facility Street" required type="text">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="city">City</label>
+                            <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="city" placeholder="City Name" required type="text">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700" for="state">State</label>
+                            <select class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="state" required>
+                                <option value="" disabled selected>Select your state</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                                <option value="FCT">Federal Capital Territory</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2 relative">
+                            <label class="text-sm font-medium text-gray-700" for="password">Password</label>
+                            <div class="relative">
+                                <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500 pr-10" id="password" placeholder="Enter your password" required type="password">
+                                <i id="togglePassword" class="fas fa-eye absolute inset-y-0 right-3 flex items-center cursor-pointer"></i>
+                            </div>
+                            <ul class="mt-2 text-sm text-gray-600 space-y-1">
+                                <li><i id="length-check" class="fas fa-times invalid-check"></i> Password must be at least 8 characters</li>
+                                <li><i id="special-check" class="fas fa-times invalid-check"></i> Password must contain one special character</li>
+                            </ul>
+                        </div>
+                        <button id="register-btn" class="inline-flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 hover:bg-red-600 btn-disabled" type="submit" disabled>
+                            Register
+                        </button>                        
+                    </form>
+                    <div id="notification" class="hidden fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-md"></div>
+                    <div class="text-center">
+                        <p class="text-gray-500">
+                            Already have an account? <a class="text-red-500 hover:underline" href="../signin/signin.html">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block relative">
+            <div class="relative h-full w-full">
+                <img src="../img/bd1.jpg" alt="Blood Donation" class="absolute inset-0 w-full h-full object-cover rounded-r-lg" />
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 p-8 rounded-r-lg">
+                    <div class="bg-white bg-opacity-20 p-8 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                        <h1 class="text-3xl font-bold text-white mb-4">Welcome to LifeBlud</h1>
+                        <p class="text-lg text-white">Join our mission to save lives through blood donation.</p>
+                        <h2 class="text-xl font-bold text-white mt-4">Why Donate Blood?</h2>
+                        <ul class="mt-4 space-y-2 text-white text-left">
+                            <li><i class="fas fa-heartbeat mr-2"></i> Saves lives of those in need</li>
+                            <li><i class="fas fa-tint mr-2"></i> Promotes your own health by stimulating blood cell production</li>
+                            <li><i class="fas fa-hands-helping mr-2"></i> Creates a sense of community and helps others</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./scripts/facilityValidation.js"></script>
+
+</body>
+</html>
