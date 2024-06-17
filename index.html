@@ -12,9 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        body{
+        body {
             font-family: "Montserrat", sans-serif;
         }
+
         .dark-red-500 {
             color: #8B0000;
         }
@@ -42,14 +43,46 @@
         #continueBtn:disabled {
             cursor: not-allowed;
             opacity: 0.6;
-            /* Adjust opacity for disabled state */
             color: #666;
-            /* Adjust text color for disabled state */
+        }
+
+        /* Loader styles */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #8B0000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-950">
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <div class="flex min-h-screen">
         <!-- Left side (Form content) -->
         <div id="leftContent" class="hidden sm:flex sm:flex-1 flex-col justify-center items-center bg-white dark:bg-gray-900 p-8 relative">
@@ -70,30 +103,34 @@
                         <p class="text-sm mt-2">Streamline your blood requests, manage inventory, and connect with a network of qualified blood donors.</p>
                     </div>
                 </div>
-                <button id="continueBtn" class="w-full py-2 bg-dark-red-500 text-white rounded-lg disabled:bg-dark-red-300 mt-4" disabled>Sign Up</button>
+                <button id="continueBtn" class="w-full py-2 bg-dark-red-500 text-white rounded-lg disabled:bg-dark-red-300 mt-4" disabled>
+                    <div id="buttonContents" class="flex items-center justify-center">
+                        <span id="continueBtnText">Sign Up</span>
+                    </div>
+                </button> 
                 <p class="text-center mt-4">Already have an account? <a href="auth/signin.html" class="text-dark-red-500">Log in</a></p>
             </div>
         </div>
 
-<!-- Right side (Image with glassmorphism box) - Mobile View -->
-<div class="sm:hidden flex items-center justify-center min-h-screen">
-    <img src="./img/bd1.jpg" alt="Blood Donation" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
-        <div class="w-full max-w-md mx-4 bg-white bg-opacity-20 p-8 rounded-lg shadow-lg backdrop-blur-sm text-center">
-            <h1 class="text-3xl font-bold text-white mb-4">Welcome to LifeBlud</h1>
-            <p class="text-lg text-white">Join our mission to save lives through blood donation.</p>
-            <h2 class="text-xl font-bold text-white mt-4">Why Donate Blood?</h2>
-            <ul class="mt-4 space-y-2 text-white text-left">
-                <li><i class="fas fa-heartbeat mr-2"></i> Saves lives of those in need</li>
-                <li><i class="fas fa-tint mr-2"></i> Promotes your own health by stimulating blood cell production</li>
-                <li><i class="fas fa-hands-helping mr-2"></i> Creates a sense of community and helps others</li>
-            </ul>
-            <!-- Mobile Sign Up Button -->
-            <button id="mobileContinueBtn" class="w-full py-2 bg-red-500 text-white rounded-lg mt-4">Sign Up</button>
-            <p class="text-center mt-2 text-white">Already have an account? <a href="signin/signin.html" class="text-red-500">Log in</a></p>
+        <!-- Right side (Image with glassmorphism box) - Mobile View -->
+        <div class="sm:hidden flex items-center justify-center min-h-screen">
+            <img src="./img/bd1.jpg" alt="Blood Donation" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
+                <div class="w-full max-w-md mx-4 bg-white bg-opacity-20 p-8 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                    <h1 class="text-3xl font-bold text-white mb-4">Welcome to LifeBlud</h1>
+                    <p class="text-lg text-white">Join our mission to save lives through blood donation.</p>
+                    <h2 class="text-xl font-bold text-white mt-4">Why Donate Blood?</h2>
+                    <ul class="mt-4 space-y-2 text-white text-left">
+                        <li><i class="fas fa-heartbeat mr-2"></i> Saves lives of those in need</li>
+                        <li><i class="fas fa-tint mr-2"></i> Promotes your own health by stimulating blood cell production</li>
+                        <li><i class="fas fa-hands-helping mr-2"></i> Creates a sense of community and helps others</li>
+                    </ul>
+                    <!-- Mobile Sign Up Button -->
+                    <button id="mobileContinueBtn" class="w-full py-2 bg-red-500 text-white rounded-lg mt-4">Sign Up</button>
+                    <p class="text-center mt-2 text-white">Already have an account? <a href="signin/signin.html" class="text-red-500">Log in</a></p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <!-- Right side (Image with glassmorphism box) - Displayed on desktops and larger devices -->
         <div class="hidden sm:flex sm:flex-1 relative">
@@ -114,7 +151,15 @@
         </div>
     </div>
 
-    <script src="/scripts/home.js"> </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        document.getElementById('loader').style.display = 'none';
+    }, 3000); // 3000 milliseconds = 3 seconds
+});
+
+    </script>
+    <script src="./scripts/home.js"></script>
 </body>
 
 </html>

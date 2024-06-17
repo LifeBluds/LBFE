@@ -12,10 +12,10 @@ if (token) {
         })
         .then(data => {
             if (data.success) {
-                // Redirect to login page after 5 seconds
+                // Redirect to login page after 3 seconds
                 setTimeout(() => {
                     window.location.href = 'signin.html';
-                }, 5000);
+                }, 3000);
             } else {
                 console.error('Email verification failed:', data.message);
                 // Optionally display an error message to the user
