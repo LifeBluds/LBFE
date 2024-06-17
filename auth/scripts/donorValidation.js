@@ -3,10 +3,10 @@ function handleDonorFormSubmit(event) {
 
     const formData = {
         email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
         age: document.getElementById('age').value,
         weight: document.getElementById('weight').value,
-        pregnancy: document.getElementById('pregnancy').value,
+        pregnancyStatus: document.getElementById('pregnancy').value,
         password: document.getElementById('password').value
     };
 
@@ -17,11 +17,20 @@ function handleDonorFormSubmit(event) {
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
-    .then(data => {
-        const responseMessage = data.message || 'Registration successful. Check your email to verify your account.';
+    .then(response => response.json().then(data => ({ status: response.status, body: data })))
+    .then(({ status, body }) => {
+        const responseMessage = body.message || 'An error occurred.';
         sessionStorage.setItem('apiResponse', responseMessage);
-        window.location.href = 'email-verification.html';
+
+        if (status === 201) { // Donor registered successfully
+            window.location.href = 'email-verification.html';
+        } else if (status === 400) { // Donor does not meet criteria
+            window.location.href = 'donor-criteria.html';
+        } else if (status === 409) { // Email address already registered
+            window.location.href = 'email-already-registered.html';
+        } else {
+            window.location.href = 'error.html'; // Generic error page
+        }
     })
     .catch(error => {
         const notification = document.getElementById('notification');
@@ -77,3 +86,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     donorForm.addEventListener('submit', handleDonorFormSubmit);
 });
+
+
+
