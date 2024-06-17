@@ -24,6 +24,10 @@
         .section-container.active {
             display: block;
         }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
 
         .icon-file-input {
             display: flex;
@@ -58,7 +62,7 @@
             <div class="space-y-6">
                 <h1 class="text-3xl font-bold text-gray-900 text-center" style="color:#8B0000;">Welcome, Please complete your profile</h1>
                 <p class="text-lg text-gray-700 text-center mt-4">Complete your profile to get access to easy blood donation opportunities, manage your appointments, and track your impact on the community.</p>
-                <form action="" method="POST">
+                <form onsubmit="submitProfileForm(event)">
                     <!-- Contact Information Section -->
                     <div class="section-container active" id="contact-information">
                         <h2 class="text-xl font-semibold text-gray-900">Contact Information</h2>
@@ -168,56 +172,11 @@
                         </div>
                     </div>
                 </form>
+                <div id="error-message"></div>
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const nextBtns = document.querySelectorAll(".next-section-btn");
-            const prevBtns = document.querySelectorAll(".prev-section-btn");
-            const sections = document.querySelectorAll(".section-container");
-            const submitBtn = document.querySelector(".submit-btn");
-            const confirmationCheckbox = document.getElementById("confirmation-checkbox");
-            const termsCheckbox = document.getElementById("terms-checkbox");
-            const fileInput = document.querySelector(".icon-file-input input[type='file']");
-            const fileIcon = document.querySelector(".icon-file-input i");
-
-            let currentSection = 0;
-
-            nextBtns.forEach((btn, index) => {
-                btn.addEventListener("click", () => {
-                    sections[currentSection].classList.remove("active");
-                    currentSection++;
-                    sections[currentSection].classList.add("active");
-                });
-            });
-
-            prevBtns.forEach((btn, index) => {
-                btn.addEventListener("click", () => {
-                    sections[currentSection].classList.remove("active");
-                    currentSection--;
-                    sections[currentSection].classList.add("active");
-                });
-            });
-
-            function toggleSubmitButton() {
-                if (confirmationCheckbox.checked && termsCheckbox.checked) {
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove("btn-disabled");
-                } else {
-                    submitBtn.disabled = true;
-                    submitBtn.classList.add("btn-disabled");
-                }
-            }
-
-            confirmationCheckbox.addEventListener("change", toggleSubmitButton);
-            termsCheckbox.addEventListener("change", toggleSubmitButton);
-
-            fileIcon.addEventListener("click", () => {
-                fileInput.click();
-            });
-        });
-    </script>
+    <script src="./scripts/completeFacilityProfile.js"></script>
 </body>
 
 </html>

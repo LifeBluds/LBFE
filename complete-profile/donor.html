@@ -26,6 +26,10 @@
         body{
             font-family: "Montserrat", sans-serif;
         }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -35,7 +39,7 @@
             <div class="space-y-6">
                 <h1 class="text-3xl font-bold text-gray-900 text-center" style="color:#8B0000;">Welcome, Please complete your profile</h1>
                 <p class="text-lg text-gray-700 text-center mt-4">Complete your profile to get access to easy blood donation opportunities, manage your appointments, and track your impact on the community</p>
-                <form action="" method="POST">
+                <form onsubmit="submitProfileForm(event)">
                     <!-- Personal Information Section -->
                     <div class="section-container active" id="personal-information">
                         <h2 class="text-xl font-semibold text-gray-900">Personal Information</h2>
@@ -240,53 +244,12 @@
                         </div>
                     </div>
                 </form>
+                <div id="error-message"></div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section-container');
-            const nextSectionButtons = document.querySelectorAll('.next-section-btn');
-            const prevSectionButtons = document.querySelectorAll('.prev-section-btn');
-            const submitButton = document.querySelector('.submit-btn');
-            const confirmationCheckbox = document.getElementById('confirmation-checkbox');
-            const contactCheckbox = document.getElementById('contact-checkbox');
-
-            let currentSectionIndex = 0;
-
-            function showSection(index) {
-                sections.forEach((section, i) => {
-                    section.classList.toggle('active', i === index);
-                });
-                currentSectionIndex = index;
-            }
-
-            nextSectionButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    showSection(currentSectionIndex + 1);
-                });
-            });
-
-            prevSectionButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    showSection(currentSectionIndex - 1);
-                });
-            });
-
-            function toggleSubmitButton() {
-                if (confirmationCheckbox.checked && contactCheckbox.checked) {
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('btn-disabled');
-                } else {
-                    submitButton.disabled = true;
-                    submitButton.classList.add('btn-disabled');
-                }
-            }
-
-            confirmationCheckbox.addEventListener('change', toggleSubmitButton);
-            contactCheckbox.addEventListener('change', toggleSubmitButton);
-        });
+    <script src="./scripts/completeDonorProfile.js">
     </script>
 </body>
 

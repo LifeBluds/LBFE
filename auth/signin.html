@@ -38,7 +38,7 @@
                     </p>
                 </div>
                 <div class="space-y-4">
-                    <form id="login-form" class="space-y-4">
+                    <form id="login-form" class="space-y-4" onsubmit="submitLoginForm(event)">
                         <div class="space-y-2">
                             <label class="text-sm font-medium text-gray-700" for="email">Email</label>
                             <input class="flex h-10 w-full rounded-md border bg-white px-3 py-2 text-sm border-gray-300 focus:border-red-500 focus:ring-red-500" id="email" placeholder="john@example.com" required type="email">
@@ -71,6 +71,6 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>
+<script src="./scripts/login.js"></script>
 </body>
 </html>
