@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Facility Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e0a35a77e2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .btn-disabled {
+            background-color: #f87171; /* red-400 */
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .section-container {
+            display: none;
+        }
+
+        .section-container.active {
+            display: block;
+        }
+
+        .icon-file-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .icon-file-input input[type="file"] {
+            display: none;
+        }
+
+        .icon-file-input i {
+            font-size: 1.5rem;
+            color: #6b7280;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl w-full bg-white rounded-lg shadow-md p-8">
+            <div class="space-y-6">
+                <h1 class="text-3xl font-bold text-gray-900 text-center" style="color:#8B0000;">Welcome, Please complete your profile</h1>
+                <p class="text-lg text-gray-700 text-center mt-4">Complete your profile to get access to easy blood donation opportunities, manage your appointments, and track your impact on the community.</p>
+                <form action="" method="POST">
+                    <!-- Contact Information Section -->
+                    <div class="section-container active" id="contact-information">
+                        <h2 class="text-xl font-semibold text-gray-900">Contact Information</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Primary Contact Person Name</label>
+                                <input type="text" name="primary-contact-name" id="primary-contact-name" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Primary Contact Person Title/Position</label>
+                                <input type="text" name="primary-contact-title" id="primary-contact-title" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="tel" name="phone-number" id="phone-number" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" name="email-address" id="email-address" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Facility Emergency Contact Information</label>
+                                <input type="text" name="facility-emergency-contact" id="facility-emergency-contact" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                        </div>
+                        <button type="button" class="next-section-btn p-4 mt-6 hover:bg-red-600 text-white font-medium py-2 rounded-md" style="background-color:#8B0000;">Next Section</button>
+                    </div>
+
+                    <!-- Operational Details Section -->
+                    <div class="section-container" id="operational-details">
+                        <h2 class="text-xl font-semibold text-gray-900">Operational Details</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Facility Operating Hours</label>
+                                <input type="text" name="operating-hours" id="operating-hours" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Blood Donation Services</label>
+                                <select name="blood-donation-services" id="blood-donation-services" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="whole-blood">Whole Blood</option>
+                                    <option value="platelets">Platelets</option>
+                                    <option value="plasma">Plasma</option>
+                                    <option value="red-blood-cell">Red Blood Cell</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Capacity (e.g., number of beds, blood storage capacity)</label>
+                                <input type="text" name="capacity" id="capacity" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Special Requirements or Notes</label>
+                                <textarea name="special-requirements" id="special-requirements" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <button type="button" class="prev-section-btn bg-gray-300 text-gray-700 p-4 font-medium py-2 rounded-md">Previous</button>
+                            <button type="button" class="next-section-btn p-4 hover:bg-red-600 text-white font-medium py-2 rounded-md" style="background-color:#8B0000;">Next Section</button>
+                        </div>
+                    </div>
+
+                    <!-- Certification and Accreditation Section -->
+                    <div class="section-container" id="certification-accreditation">
+                        <h2 class="text-xl font-semibold text-gray-900">Certification and Accreditation</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Accreditation Body (if applicable)</label>
+                                <input type="text" name="accreditation-body" id="accreditation-body" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Accreditation Number (if applicable)</label>
+                                <input type="text" name="accreditation-number" id="accreditation-number" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Certification Image Upload</label>
+                                <label class="icon-file-input">
+                                    <input type="file" name="certification-image" id="certification-image">
+                                    <i class="fas fa-upload"></i> Click to upload
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <button type="button" class="prev-section-btn bg-gray-300 text-gray-700 p-4 font-medium py-2 rounded-md">Previous</button>
+                            <button type="button" class="next-section-btn p-4 hover:bg-red-600 text-white font-medium py-2 rounded-md" style="background-color:#8B0000;">Next Section</button>
+                        </div>
+                    </div>
+
+                    <!-- Consent and Confirmation Section -->
+                    <div class="section-container" id="consent-confirmation">
+                        <h2 class="text-xl font-semibold text-gray-900">Consent and Confirmation</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" id="confirmation-checkbox" class="input-field border border-gray-300 rounded-md">
+                                    <span class="ml-2 text-sm font-medium text-gray-700">I confirm that all information provided is accurate and complete.</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" id="terms-checkbox" class="input-field border border-gray-300 rounded-md">
+                                    <span class="ml-2 text-sm font-medium text-gray-700">I agree to the terms and conditions of registration.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <button type="button" class="prev-section-btn bg-gray-300 text-gray-700 p-4 font-medium py-2 rounded-md">Previous</button>
+                            <button type="submit" class="submit-btn p-4 hover:bg-red-600 text-white font-medium py-2 rounded-md btn-disabled" disabled style="background-color:#0da000;">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nextBtns = document.querySelectorAll(".next-section-btn");
+            const prevBtns = document.querySelectorAll(".prev-section-btn");
+            const sections = document.querySelectorAll(".section-container");
+            const submitBtn = document.querySelector(".submit-btn");
+            const confirmationCheckbox = document.getElementById("confirmation-checkbox");
+            const termsCheckbox = document.getElementById("terms-checkbox");
+            const fileInput = document.querySelector(".icon-file-input input[type='file']");
+            const fileIcon = document.querySelector(".icon-file-input i");
+
+            let currentSection = 0;
+
+            nextBtns.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    sections[currentSection].classList.remove("active");
+                    currentSection++;
+                    sections[currentSection].classList.add("active");
+                });
+            });
+
+            prevBtns.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    sections[currentSection].classList.remove("active");
+                    currentSection--;
+                    sections[currentSection].classList.add("active");
+                });
+            });
+
+            function toggleSubmitButton() {
+                if (confirmationCheckbox.checked && termsCheckbox.checked) {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove("btn-disabled");
+                } else {
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add("btn-disabled");
+                }
+            }
+
+            confirmationCheckbox.addEventListener("change", toggleSubmitButton);
+            termsCheckbox.addEventListener("change", toggleSubmitButton);
+
+            fileIcon.addEventListener("click", () => {
+                fileInput.click();
+            });
+        });
+    </script>
+</body>
+
+</html>

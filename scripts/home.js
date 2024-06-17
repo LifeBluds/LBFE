@@ -29,9 +29,9 @@ document.getElementById('facilityCard').addEventListener('click', function() {
 
 document.getElementById('continueBtn').addEventListener('click', function() {
     if (selectedCard === 'donor') {
-        window.location.href = 'signup/donor.html';
+        window.location.href = 'auth/donor.html';
     } else if (selectedCard === 'facility') {
-        window.location.href = 'signup/facility.html';
+        window.location.href = 'auth/facility.html';
     }
 });
 

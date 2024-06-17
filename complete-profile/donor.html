@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Donor Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e0a35a77e2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .btn-disabled {
+            background-color: #f87171; /* red-400 */
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .section-container {
+            display: none;
+        }
+        .section-container.active {
+            display: block;
+        }
+
+        body{
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl w-full bg-white rounded-lg shadow-md p-8">
+            <div class="space-y-6">
+                <h1 class="text-3xl font-bold text-gray-900 text-center" style="color:#8B0000;">Welcome, Please complete your profile</h1>
+                <p class="text-lg text-gray-700 text-center mt-4">Complete your profile to get access to easy blood donation opportunities, manage your appointments, and track your impact on the community</p>
+                <form action="" method="POST">
+                    <!-- Personal Information Section -->
+                    <div class="section-container active" id="personal-information">
+                        <h2 class="text-xl font-semibold text-gray-900">Personal Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">First Name</label>
+                                <input type="text" name="first-name" id="first-name" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Middle Name</label>
+                                <input type="text" name="middle-name" id="middle-name" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                                <input type="text" name="last-name" id="last-name" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Occupation</label>
+                                <input type="text" name="occupation" id="occupation" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Blood Group</label>
+                                <input type="text" name="blood-group" id="blood-group" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Gender</label>
+                                <select name="gender" id="gender" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">City</label>
+                                <input type="text" name="city" id="city" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">State</label>
+                                <input type="text" name="state" id="state" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Street Address</label>
+                                <input type="text" name="street-address" id="street-address" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Married?</label>
+                                <select name="married" id="married" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="next-section-btn p-4 mt-6  hover:bg-red-600 text-white font-medium py-2 rounded-md" style="background-color:#8B0000;">Next Section</button>
+                    </div>
+
+                    <!-- Health Information Section -->
+                    <div class="section-container" id="health-information">
+                        <h2 class="text-xl font-semibold text-gray-900">Health Information</h2>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Recent Illnesses or Infections?</label>
+                                <select name="recent-illness" id="recent-illness" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please specify:</label>
+                                <textarea name="illness-specification" id="illness-specification" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Current Medications?</label>
+                                <select name="current-medications" id="current-medications" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please list medications:</label>
+                                <textarea name="medications-list" id="medications-list" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Recent Vaccinations?</label>
+                                <select name="recent-vaccinations" id="recent-vaccinations" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please specify:</label>
+                                <textarea name="vaccinations-specification" id="vaccinations-specification" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">History of Blood Transfusions or Organ Transplants?</label>
+                                <select name="transfusions-transplants" id="transfusions-transplants" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please specify:</label>
+                                <textarea name="transfusions-transplants-specification" id="transfusions-transplants-specification" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Medical History:</label>
+                                <textarea name="medical-history" id="medical-history" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Recent Travel History?</label>
+                                <select name="travel-history" id="travel-history" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please list countries visited in the past 6 months:</label>
+                                <textarea name="travel-history-countries" id="travel-history-countries" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <button type="button" class="prev-section-btn p-4 bg-gray-300 text-gray-700 font-medium py-2 rounded-md">Previous</button>
+                            <button type="button" class="next-section-btn p-4 hover:bg-red-600 text-white font-medium py-2 rounded-md" style="background-color:#8B0000;">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Lifestyle Information Section -->
+                    <div class="section-container" id="lifestyle-information">
+                        <h2 class="text-xl font-semibold text-gray-900">Lifestyle Information</h2>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Alcohol Consumption?</label>
+                                <select name="alcohol-consumption" id="alcohol-consumption" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please specify frequency and quantity:</label>
+                                <textarea name="alcohol-frequency-quantity" id="alcohol-frequency-quantity" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Tobacco Use?</label>
+                                <select name="tobacco-use" id="tobacco-use" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please specify type and frequency:</label>
+                                <textarea name="tobacco-type-frequency" id="tobacco-type-frequency" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Drug Use?</label>
+                                <select name="drug-use" id="drug-use" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Yes, please specify type and frequency:</label>
+                                <textarea name="drug-type-frequency" id="drug-type-frequency" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Physical Activity?</label>
+                                <select name="physical-activity" id="physical-activity" class="input-field border border-gray-300 rounded-md w-full py-2 px-3">
+                                    <option value="regular">Regular</option>
+                                    <option value="irregular">Irregular</option>
+                                    <option value="none">None</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">If Regular, please specify type and frequency:</label>
+                                <textarea name="physical-activity-type-frequency" id="physical-activity-type-frequency" class="input-field border border-gray-300 rounded-md w-full py-2 px-3"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <button type="button" class="prev-section-btn bg-gray-300 text-gray-700 p-4 font-medium py-2 rounded-md">Previous</button>
+                            <button type="button" class="next-section-btn p-4  hover:bg-red-600 text-white font-medium py-2 rounded-md" style="background-color:#8B0000;">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Consent and Confirmation Section -->
+                    <div class="section-container" id="consent-confirmation">
+                        <h2 class="text-xl font-semibold text-gray-900">Consent and Confirmation</h2>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" id="confirmation-checkbox" class="input-field border border-gray-300 rounded-md">
+                                    <span class="ml-2 text-sm font-medium text-gray-700">I confirm that all information provided is accurate and complete.</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" id="contact-checkbox" class="input-field border border-gray-300 rounded-md">
+                                    <span class="ml-2 text-sm font-medium text-gray-700">I agree to be contacted for blood donation.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <button type="button" class="prev-section-btn bg-gray-300 text-gray-700 p-4 font-medium py-2 rounded-md">Previous</button>
+                            <button type="submit" class="submit-btn bg-green-500 p-4 hover:bg-green-600 text-white font-medium py-2 rounded-md btn-disabled" disabled>Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-container');
+            const nextSectionButtons = document.querySelectorAll('.next-section-btn');
+            const prevSectionButtons = document.querySelectorAll('.prev-section-btn');
+            const submitButton = document.querySelector('.submit-btn');
+            const confirmationCheckbox = document.getElementById('confirmation-checkbox');
+            const contactCheckbox = document.getElementById('contact-checkbox');
+
+            let currentSectionIndex = 0;
+
+            function showSection(index) {
+                sections.forEach((section, i) => {
+                    section.classList.toggle('active', i === index);
+                });
+                currentSectionIndex = index;
+            }
+
+            nextSectionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showSection(currentSectionIndex + 1);
+                });
+            });
+
+            prevSectionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showSection(currentSectionIndex - 1);
+                });
+            });
+
+            function toggleSubmitButton() {
+                if (confirmationCheckbox.checked && contactCheckbox.checked) {
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('btn-disabled');
+                } else {
+                    submitButton.disabled = true;
+                    submitButton.classList.add('btn-disabled');
+                }
+            }
+
+            confirmationCheckbox.addEventListener('change', toggleSubmitButton);
+            contactCheckbox.addEventListener('change', toggleSubmitButton);
+        });
+    </script>
+</body>
+
+</html>
+
