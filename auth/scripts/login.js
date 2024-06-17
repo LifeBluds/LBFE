@@ -1,7 +1,6 @@
 async function submitLoginForm(event) {
     event.preventDefault();
-    
-    const loginForm = document.getElementById('login-form');
+
     const loginButton = document.getElementById('login-btn');
     const loginLoader = document.getElementById('login-loader');
     const notification = document.getElementById('notification');
@@ -12,6 +11,8 @@ async function submitLoginForm(event) {
     // Show loader and disable button during login process
     loginButton.disabled = true;
     loginLoader.classList.remove('hidden');
+    notification.textContent = ''; // Clear previous notifications
+    notification.classList.add('hidden'); // Hide notification
 
     try {
         const response = await fetch('https://gnarly-school-just-rail-production.pipeops.app/api/auth/login', {
@@ -23,10 +24,19 @@ async function submitLoginForm(event) {
         });
 
         if (!response.ok) {
-            throw new Error('Login failed');
+            const errorMessage = await response.text();
+            console.error('Error response:', errorMessage);
+            throw new Error('Login failed: ' + errorMessage);
         }
 
         const data = await response.json();
+        console.log('Response data:', data);
+
+        // Validate expected response structure
+        if (!data.token || !data.user || !data.user.role) {
+            throw new Error('Invalid response structure');
+        }
+
         // Store token in local storage or session storage
         localStorage.setItem('token', data.token);
 
@@ -43,8 +53,7 @@ async function submitLoginForm(event) {
                 redirectUrl = '../../admin/dashboard.html';
                 break;
             default:
-                // Handle unexpected roles
-                break;
+                throw new Error('Unexpected user role');
         }
 
         // Redirect after successful login
@@ -63,6 +72,19 @@ async function submitLoginForm(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Any additional initialization code can go here
     const loginForm = document.getElementById('login-form');
     loginForm.addEventListener('submit', submitLoginForm);
+
+    // Example: Hide the loader and notification by default
+    const loginLoader = document.getElementById('login-loader');
+    const notification = document.getElementById('notification');
+
+    if (loginLoader) {
+        loginLoader.classList.add('hidden');
+    }
+    
+    if (notification) {
+        notification.classList.add('hidden');
+    }
 });
