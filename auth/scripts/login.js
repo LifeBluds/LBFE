@@ -50,7 +50,7 @@ async function submitLoginForm(event) {
                 redirectUrl = '../../complete-profile/facility.html';
                 break;
             case 'Admin':
-                redirectUrl = '../../admin/dashboard.html';
+                redirectUrl = '../../admin/admin.html';
                 break;
             default:
                 throw new Error('Unexpected user role');
