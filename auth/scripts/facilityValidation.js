@@ -5,7 +5,7 @@ function handleFacilityFormSubmit(event) {
         facilityType: document.getElementById('facility-type').value,
         regNumber: document.getElementById('reg-number').value,
         email: document.getElementById('facility-email').value,
-        phone: document.getElementById('phone').value,
+        phone: document.getElementById('official-phone').value,
         address: document.getElementById('address').value,
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
